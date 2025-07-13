@@ -1,6 +1,6 @@
 body {
   font-family: 'Segoe UI', sans-serif;
-  background-color: #ffeef5;
+  background-color: #ffe3ef;
   color: #87004f;
   text-align: center;
   margin: 0;
@@ -15,7 +15,7 @@ h1 {
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 15px;
   padding: 20px;
 }
