@@ -50,7 +50,7 @@ const data = [
       { nombre: "Etología y Bienestar Animal", id: "etologia", prereq: ["zoologia"] }
     ]
   },
-    {
+  {
     semestre: "6° Semestre",
     ramos: [
       { nombre: "Ginecología y Obstetricia", id: "gineco", prereq: ["repro"] },
@@ -156,9 +156,14 @@ function findSubjectById(id) {
 grid.addEventListener('click', e => {
   if (e.target.classList.contains('subject') && !e.target.classList.contains('locked')) {
     const id = e.target.dataset.id;
-    state[id] = true;
+    if (state[id]) {
+      delete state[id];
+      e.target.classList.remove('completed');
+    } else {
+      state[id] = true;
+      e.target.classList.add('completed');
+    }
     localStorage.setItem('aprobadas', JSON.stringify(state));
-    e.target.classList.add('completed');
     updateSubjects();
   }
 });
