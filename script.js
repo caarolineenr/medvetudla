@@ -6,7 +6,7 @@ const data = [
       { nombre: "Biología Celular", id: "biocel" },
       { nombre: "Matemática General", id: "matematica" },
       { nombre: "Taller de Comunicación Oral y Escrita", id: "comunicacion" },
-      { nombre: "Introducción a la Medicina Veterinaria", id: "introvet" },
+      { nombre: "Introducción a la Medicina Veterinaria", id: "introvet" }
     ]
   },
   {
@@ -16,7 +16,7 @@ const data = [
       { nombre: "Histoembriología", id: "histo" },
       { nombre: "Inglés I", id: "ingles1" },
       { nombre: "Bioquímica", id: "bioquimica", prereq: ["quimica"] },
-      { nombre: "Bioestadística", id: "bioestadistica", prereq: ["matematica"] },
+      { nombre: "Bioestadística", id: "bioestadistica", prereq: ["matematica"] }
     ]
   },
   {
@@ -26,7 +26,7 @@ const data = [
       { nombre: "Zoología", id: "zoologia", prereq: ["histo", "biocel"] },
       { nombre: "Inglés II", id: "ingles2", prereq: ["ingles1"] },
       { nombre: "Medio Ambiente y Gestión Ambiental", id: "medioambiente", prereq: ["biocel"] },
-      { nombre: "Práctica Básica", id: "practica_basica", prereq: ["introvet", "anatomia_canino"] },
+      { nombre: "Práctica Básica", id: "practica_basica", prereq: ["introvet", "anatomia_canino"] }
     ]
   },
   {
@@ -36,76 +36,78 @@ const data = [
       { nombre: "Fisiología Animal", id: "fisiologia", prereq: ["bioquimica", "anatomia_canino"] },
       { nombre: "Enfermedades Parasitarias", id: "parasitos", prereq: ["zoologia"] },
       { nombre: "Microbiología General y Veterinaria", id: "microbio", prereq: ["biocel"] },
-      { nombre: "Genética", id: "genetica", prereq: ["bioestadistica"] },
+      { nombre: "Genética", id: "genetica", prereq: ["bioestadistica"] }
     ]
   },
   {
     semestre: "5° Semestre",
     ramos: [
       { nombre: "Reproducción e Inseminación Artificial", id: "repro", prereq: ["fisiologia"] },
-      { nombre: "Fisiopatología", id: "fisiopato", prereq: ["histo", "fisiología"] },
+      { nombre: "Fisiopatología", id: "fisio_pat", prereq: ["histo", "fisiologia"] },
       { nombre: "Inmunología", id: "inmuno", prereq: ["microbio"] },
-      { nombre: "Nutrición y Alimentación Animal", id: "nutri", prereq: ["bioquimica"] },
-      { nombre: "Tecnología de los Alimentos", id: "tecno", prereq: ["microbio"] },
-      { nombre: "Etología y Bienestar Animal", id: "eto", prereq: ["zoologia"] },
+      { nombre: "Nutrición y Alimentación Animal", id: "nutricion", prereq: ["bioquimica"] },
+      { nombre: "Tecnología de los Alimentos", id: "tec_alimentos", prereq: ["microbio"] },
+      { nombre: "Etología y Bienestar Animal", id: "etologia", prereq: ["zoologia"] }
     ]
   },
-  {
+    {
     semestre: "6° Semestre",
     ramos: [
-      { nombre: "Ginecología y Obstetricia", id: "gine", prereq: ["repro"] },
-      { nombre: "Control de Calidad de los Alimentos", id: "control", prereq: ["parasitos", "tecno"] },
-      { nombre: "Producción Avícola", id: "prodavi", prereq: ["nutri"] },
-      { nombre: "Farmacología y Toxicología", id: "farmato", prereq: ["fisiologia"] },
-      { nombre: "Enfermedades Infecciosas", id: "infe", prereq: ["inmuno"] },
-      { nombre: "Patología de Sistemas", id: "pato", prereq: ["fisiopato"] },
+      { nombre: "Ginecología y Obstetricia", id: "gineco", prereq: ["repro"] },
+      { nombre: "Control de Calidad de los Alimentos", id: "control_calidad", prereq: ["parasitos", "tec_alimentos"] },
+      { nombre: "Producción Avícola", id: "avicola", prereq: ["nutricion"] },
+      { nombre: "Farmacología y Toxicología", id: "farmaco", prereq: ["fisiologia"] },
+      { nombre: "Enfermedades Infecciosas", id: "infecciosas", prereq: ["inmuno"] },
+      { nombre: "Patología de Sistemas", id: "patsis", prereq: ["fisio_pat"] }
     ]
   },
   {
     semestre: "7° Semestre",
     ramos: [
-      { nombre: "Laboratorio Clínico", id: "lab", prereq: ["pato"] },
-      { nombre: "Producción Ovinos y Caprinos", id: "prodov", prereq: ["genetica"] },
-      { nombre: "Producción Porcina", id: "prodpor", prereq: ["repro", "medioambiente"] },
-      { nombre: "Epidemiología Veterinaria", id: "epi", prereq: ["infe"] },
-      { nombre: "Semiología", id: "semio", prereq: ["farmato", "fisiopato", "anatomia_comp"] },
-      { nombre: "Práctica Intermedia", id: "p_inter", prereq: ["farmato", "infe"] },
+      { nombre: "Laboratorio Clínico", id: "labclinico", prereq: ["patsis"] },
+      { nombre: "Producción Ovinos y Caprinos", id: "ovinos", prereq: ["genetica"] },
+      { nombre: "Producción Porcina", id: "porcina", prereq: ["repro", "medioambiente"] },
+      { nombre: "Epidemiología Veterinaria", id: "epidemio", prereq: ["infecciosas"] },
+      { nombre: "Semiología", id: "semiologia", prereq: ["farmaco", "fisio_pat", "anatomia_comp"] },
+      { nombre: "Práctica Intermedia", id: "practica_inter", prereq: ["farmaco", "infecciosas"] }
     ]
   },
   {
     semestre: "8° Semestre",
     ramos: [
-      { nombre: "Medicina Animales Mayores", id: "med_mayor", prereq: ["lab", "semio"] },
-      { nombre: "Medicina de Caninos", id: "med_can", prereq: ["lab", "semio"] },
-      { nombre: "Medicina de Felinos", id: "med_fel", prereq: ["lab", "semio"] },
-      { nombre: "Medicina de Animales Exóticos", id: "med_exo", prereq: ["lab", "semio"] },
-      { nombre: "Cirugía General", id: "cirugia", prereq: ["semio"] },
+      { nombre: "Medicina Animales Mayores", id: "med_mayores", prereq: ["labclinico", "semiologia"] },
+      { nombre: "Medicina de Caninos", id: "med_caninos", prereq: ["labclinico", "semiologia"] },
+      { nombre: "Medicina de Felinos", id: "med_felinos", prereq: ["labclinico", "semiologia"] },
+      { nombre: "Medicina de Animales Exóticos", id: "med_exoticos", prereq: ["labclinico", "semiologia"] },
+      { nombre: "Cirugía General", id: "cirugia", prereq: ["semiologia"] }
     ]
   },
   {
     semestre: "9° Semestre",
     ramos: [
-      { nombre: "Formulación y Evaluación de Proyectos Agropecuarios", id: "form", prereq: ["admin"] },
-      { nombre: "Patología Quirúrgica", id: "patoqui", prereq: ["cirugia"] },
-      { nombre: "Diagnóstico por Imágenes", id: "diagnos", prereq: ["pato"] },
-      { nombre: "Producción Acuícola", id: "prodacui", prereq: ["nutri"] },
-      { nombre: "Producción Bovinos: Carne y Leche", id: "prodbov", prereq: ["gine"] },
-      { nombre: "Metodología de la Investigación", id: "metodolo", prereq: ["epi"] },
-      { nombre: "Práctica Final", id: "p_final", prereq: ["p_inter"] },
+      { nombre: "Formulación y Evaluación de Proyectos Agropecuarios", id: "proyectos", prereq: ["admin"] },
+      { nombre: "Patología Quirúrgica", id: "patquir", prereq: ["cirugia"] },
+      { nombre: "Diagnóstico por Imágenes", id: "imagenes", prereq: ["patsis"] },
+      { nombre: "Producción Acuícola", id: "acuicola", prereq: ["nutricion"] },
+      { nombre: "Producción Bovinos: Carne y Leche", id: "bovinos", prereq: ["gineco"] },
+      { nombre: "Metodología de la Investigación", id: "metodo", prereq: ["epidemio"] },
+      { nombre: "Práctica Final", id: "practica_final", prereq: ["practica_inter"] }
     ]
   },
   {
     semestre: "10° Semestre",
     ramos: [
-      { nombre: "Farmacología Aplicada", id: "farmaco", prereq: ["med_can", "med_mayor"] },
-      { nombre: "Salud Pública", id: "salud", prereq: ["control", "epi"] },
-      { nombre: "Trabajo de Titulación", id: "trabtit", prereq: ["metodolo"] },
-      { nombre: "Clínica de Animales Mayores", id: "cl_mayor", prereq: ["med_mayor"] },
-      { nombre: "Clínica de Animales Menores", id: "cl_menor", prereq: ["med_can", "diagnos"] },
+      { nombre: "Farmacología Aplicada", id: "farmaco_aplicada", prereq: ["med_caninos", "med_mayores"] },
+      { nombre: "Salud Pública", id: "salud_pub", prereq: ["control_calidad", "epidemio"] },
+      { nombre: "Trabajo de Titulación", id: "titulo", prereq: ["metodo"] },
+      { nombre: "Clínica de Animales Mayores", id: "clinica_mayores", prereq: ["med_mayores"] },
+      { nombre: "Clínica de Animales Menores", id: "clinica_menores", prereq: ["med_caninos", "imagenes"] }
+    ]
+  }
 ];
 
 const grid = document.querySelector('.grid');
-const state = {}; // Guarda materias aprobadas
+const state = JSON.parse(localStorage.getItem('aprobadas')) || {};
 
 function createGrid() {
   data.forEach(sem => {
@@ -120,9 +122,8 @@ function createGrid() {
       div.textContent = ramo.nombre;
       div.className = 'subject';
       div.dataset.id = ramo.id;
-      if (ramo.prereq) {
-        div.classList.add('locked');
-      }
+      if (state[ramo.id]) div.classList.add('completed');
+      else if (ramo.prereq) div.classList.add('locked');
       semDiv.appendChild(div);
     });
 
@@ -135,7 +136,6 @@ function updateSubjects() {
     const id = el.dataset.id;
     const ramo = findSubjectById(id);
     if (el.classList.contains('completed')) return;
-
     if (!ramo.prereq || ramo.prereq.every(r => state[r])) {
       el.classList.remove('locked');
     } else {
@@ -157,6 +157,7 @@ grid.addEventListener('click', e => {
   if (e.target.classList.contains('subject') && !e.target.classList.contains('locked')) {
     const id = e.target.dataset.id;
     state[id] = true;
+    localStorage.setItem('aprobadas', JSON.stringify(state));
     e.target.classList.add('completed');
     updateSubjects();
   }
