@@ -50,7 +50,7 @@ h1 {
 }
 
 .subject.completed {
-  background-color: #c9a0ff;
+  background-color: #ffa0ad;
   text-decoration: line-through;
   color: #4a004a;
 }
