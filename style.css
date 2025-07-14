@@ -50,9 +50,9 @@ h1 {
 }
 
 .subject.completed {
-  background-color: #c9a0ff;
+  background-color: #d00068;
   text-decoration: line-through;
-  color: #af99ff;
+  color: #6e1960;
 }
 
 .subject:hover:not(.locked):not(.completed) {
