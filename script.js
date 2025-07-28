@@ -1,6 +1,6 @@
 const data = [
   {
-    semestre: "1° Semestre",
+    semestre: "I SEMESTRE",
     ramos: [
       { nombre: "Química", id: "quimica" },
       { nombre: "Biología Celular", id: "biocel" },
@@ -10,7 +10,7 @@ const data = [
     ]
   },
   {
-    semestre: "2° Semestre",
+    semestre: "II SEMESTRE",
     ramos: [
       { nombre: "Anatomía del Canino", id: "anatomia_canino" },
       { nombre: "Histoembriología", id: "histo" },
@@ -20,7 +20,7 @@ const data = [
     ]
   },
   {
-    semestre: "3° Semestre",
+    semestre: "III SEMESTRE",
     ramos: [
       { nombre: "Anatomía Comparada", id: "anatomia_comp", prereq: ["anatomia_canino"] },
       { nombre: "Zoología", id: "zoologia", prereq: ["histo", "biocel"] },
@@ -30,7 +30,7 @@ const data = [
     ]
   },
   {
-    semestre: "4° Semestre",
+    semestre: "IV SEMESTRE",
     ramos: [
       { nombre: "Administración y Emprendimiento Veterinario", id: "admin" },
       { nombre: "Fisiología Animal", id: "fisiologia", prereq: ["bioquimica", "anatomia_canino"] },
@@ -40,7 +40,7 @@ const data = [
     ]
   },
   {
-    semestre: "5° Semestre",
+    semestre: "V SEMESTRE",
     ramos: [
       { nombre: "Reproducción e Inseminación Artificial", id: "repro", prereq: ["fisiologia"] },
       { nombre: "Fisiopatología", id: "fisio_pat", prereq: ["histo", "fisiologia"] },
@@ -51,7 +51,7 @@ const data = [
     ]
   },
   {
-    semestre: "6° Semestre",
+    semestre: "VI SEMESTRE",
     ramos: [
       { nombre: "Ginecología y Obstetricia", id: "gineco", prereq: ["repro"] },
       { nombre: "Control de Calidad de los Alimentos", id: "control_calidad", prereq: ["parasitos", "tec_alimentos"] },
@@ -62,7 +62,7 @@ const data = [
     ]
   },
   {
-    semestre: "7° Semestre",
+    semestre: "VII SEMESTRE",
     ramos: [
       { nombre: "Laboratorio Clínico", id: "labclinico", prereq: ["patsis"] },
       { nombre: "Producción Ovinos y Caprinos", id: "ovinos", prereq: ["genetica"] },
@@ -73,7 +73,7 @@ const data = [
     ]
   },
   {
-    semestre: "8° Semestre",
+    semestre: "VIII SEMESTRE",
     ramos: [
       { nombre: "Medicina Animales Mayores", id: "med_mayores", prereq: ["labclinico", "semiologia"] },
       { nombre: "Medicina de Caninos", id: "med_caninos", prereq: ["labclinico", "semiologia"] },
@@ -83,7 +83,7 @@ const data = [
     ]
   },
   {
-    semestre: "9° Semestre",
+    semestre: "IX SEMESTRE",
     ramos: [
       { nombre: "Formulación y Evaluación de Proyectos Agropecuarios", id: "proyectos", prereq: ["admin"] },
       { nombre: "Patología Quirúrgica", id: "patquir", prereq: ["cirugia"] },
@@ -95,7 +95,7 @@ const data = [
     ]
   },
   {
-    semestre: "10° Semestre",
+    semestre: "X SEMESTRE",
     ramos: [
       { nombre: "Farmacología Aplicada", id: "farmaco_aplicada", prereq: ["med_caninos", "med_mayores"] },
       { nombre: "Salud Pública", id: "salud_pub", prereq: ["control_calidad", "epidemio"] },
